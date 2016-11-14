@@ -1,0 +1,88 @@
+﻿<Window x:Class="WpfApplication2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication2"
+        mc:Ignorable="d"
+        Title="iOS6 Chat Generator" Height="914" Width="1280">
+    <Window.Resources>
+        <Style x:Key="TextBlockStyle1" TargetType="{x:Type TextBlock}">
+            <Setter Property="TextWrapping" Value="NoWrap"/>
+            <Setter Property="TextTrimming" Value="None"/>
+            <Setter Property="FontSize" Value="28"/>
+            <Setter Property="Foreground" Value="#FFFBFBFB"/>
+        </Style>
+        <Style x:Key="TextBlockStyle2" TargetType="{x:Type TextBlock}">
+            <Setter Property="TextWrapping" Value="NoWrap"/>
+            <Setter Property="TextTrimming" Value="None"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="860" Margin="766,10,0,0" VerticalAlignment="Top" Width="496">
+            <Canvas x:Name="appCanvas">
+                <Image x:Name="image" HorizontalAlignment="Left" Height="843" Margin="9,9,0,-4" VerticalAlignment="Top" Width="477" Source="Picture1.png"/>
+                <TextBlock x:Name="textBlockName" HorizontalAlignment="Center" TextAlignment="Center" Text="Name" VerticalAlignment="Center" Height="30" Width="254" FontWeight="Bold" FontFamily="Arial" Style="{DynamicResource TextBlockStyle1}" Canvas.Top="54" Canvas.Left="134">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="1" Direction="135" Color="Black" Opacity="0.5" BlurRadius="0"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+                <TextBlock x:Name="textBlockClock" HorizontalAlignment="Center" TextAlignment="Center" Text="12:00 PM" VerticalAlignment="Center" Height="30" Width="274" FontWeight="Bold" FontFamily="Arial" Style="{DynamicResource TextBlockStyle2}" Canvas.Left="132" Canvas.Top="13">
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="1" Direction="90" Color="White" Opacity="0.5" BlurRadius="0"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+                <Image x:Name="top_wifi_jpg" Height="30" Canvas.Left="106" Source="top_wifi.jpg" Stretch="Fill" Canvas.Top="9" Width="26"/>
+                <ListView x:Name="listView" HorizontalAlignment="Left" Height="677" VerticalAlignment="Top" Width="474" Canvas.Top="116" Background="#DBE1ED" Canvas.Left="10" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.CanContentScroll="False">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="Margin" Value="0"/>
+                            <Setter Property="Padding" Value="0"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+            </Canvas>
+        </Border>
+        <GroupBox x:Name="groupBox" Header="Input Data" HorizontalAlignment="Left" Height="289" Margin="10,0,0,0" VerticalAlignment="Top" Width="751">
+            <Grid HorizontalAlignment="Left" Height="261" Margin="10,10,-2,0" VerticalAlignment="Top" Width="731">
+                <Label x:Name="lblName" Content="Name:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Width="133"/>
+                <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="23" Margin="148,10,0,0" VerticalAlignment="Top" Width="200"/>
+                <Button x:Name="btnSetName" Content="Set" HorizontalAlignment="Left" Margin="353,10,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="btnSetName_Click"/>
+                <Label x:Name="lblClock" Content="Clock:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="133"/>
+                <TextBox x:Name="textBoxClock" HorizontalAlignment="Left" Height="23" Margin="148,41,0,0" VerticalAlignment="Top" Width="200"/>
+                <Button x:Name="btnSetClock" Content="Set" HorizontalAlignment="Left" Margin="353,41,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="btnSetClock_Click"/>
+                <Label x:Name="lblSetIncomingMessage" Content="Incoming Message:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top" Width="133"/>
+                <TextBox x:Name="textBoxIncomingMessage" HorizontalAlignment="Left" Height="23" Margin="148,72,0,0" VerticalAlignment="Top" Width="503"/>
+                <Button x:Name="btnSetIncomingMessage" Content="Set" HorizontalAlignment="Left" Margin="656,72,0,0" VerticalAlignment="Top" Width="30" Height="23" Click="btnSetIncomingMessage_Click"/>
+                <Label x:Name="lblSetOutgoingMessage" Content="Outgoing Message:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="133"/>
+                <TextBox x:Name="textBoxOutgoingMessage" HorizontalAlignment="Left" Height="23" Margin="148,103,0,0" VerticalAlignment="Top" Width="503"/>
+                <Button x:Name="btnSetOutgoingMessage" Content="Set" HorizontalAlignment="Left" Margin="656,103,0,0" VerticalAlignment="Top" Width="30" Height="23" Click="btnSetOutgoingMessage_Click"/>
+                <Button x:Name="btnSetIncomingImage" Content="Img" HorizontalAlignment="Left" Margin="691,72,0,0" VerticalAlignment="Top" Width="30" Height="23" Click="btnSetIncomingImage_Click"/>
+                <Button x:Name="btnSetOutgoingImage" Content="Img" HorizontalAlignment="Left" Margin="691,103,0,0" VerticalAlignment="Top" Width="30" Height="23" Click="btnSetOutgoingImage_Click"/>
+                <Button x:Name="btnClearScreen" Content="Clear iPhone Screen" HorizontalAlignment="Left" Margin="148,140,0,0" VerticalAlignment="Top" Width="150" Height="23" Click="btnClearScreen_Click"/>
+                <Button x:Name="btnSaveScreen" Content="Save iPhone Screen" HorizontalAlignment="Left" Margin="501,140,0,0" VerticalAlignment="Top" Width="150" Height="23" Click="btnSaveScreen_Click"/>
+                <Button x:Name="btnClearLastItem" Content="ClearLastItem" HorizontalAlignment="Left" Margin="324,140,0,0" VerticalAlignment="Top" Width="150" Height="23" Click="btnClearLastItem_Click"/>
+            </Grid>
+        </GroupBox>
+        <ListView x:Name="listViewImages" HorizontalAlignment="Left" Height="336" Margin="0,294,0,0" VerticalAlignment="Top" Width="751">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Background="Transparent" Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.Resources>
+                <Style TargetType="GridViewColumnHeader">
+                    <Setter Property="Visibility" Value="Collapsed" />
+                </Style>
+            </ListView.Resources>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
