@@ -21,6 +21,9 @@
         </Style>
     </Window.Resources>
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="gray-grunge-texture-background-wallpapers_36576_2560x1600.jpg"/>
+        </Grid.Background>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="860" Margin="766,10,0,0" VerticalAlignment="Top" Width="496">
             <Canvas x:Name="appCanvas">
                 <Image x:Name="image" HorizontalAlignment="Left" Height="843" Margin="9,9,0,-4" VerticalAlignment="Top" Width="477" Source="Picture1.png"/>
@@ -46,18 +49,18 @@
                 </ListView>
             </Canvas>
         </Border>
-        <GroupBox x:Name="groupBox" Header="Input Data" HorizontalAlignment="Left" Height="289" Margin="10,0,0,0" VerticalAlignment="Top" Width="751">
-            <Grid HorizontalAlignment="Left" Height="261" Margin="10,10,-2,0" VerticalAlignment="Top" Width="731">
-                <Label x:Name="lblName" Content="Name:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Width="133"/>
+        <GroupBox x:Name="groupBox" Header="Input Data" HorizontalAlignment="Left" Height="221" Margin="10,0,0,0" VerticalAlignment="Top" Width="751" Foreground="White">
+            <Grid HorizontalAlignment="Left" Margin="10,10,-2,-2" Width="731">
+                <Label Foreground="white" x:Name="lblName" Content="Name:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Width="133"/>
                 <TextBox x:Name="textBoxName" HorizontalAlignment="Left" Height="23" Margin="148,10,0,0" VerticalAlignment="Top" Width="200"/>
                 <Button x:Name="btnSetName" Content="Set" HorizontalAlignment="Left" Margin="353,10,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="btnSetName_Click"/>
-                <Label x:Name="lblClock" Content="Clock:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="133"/>
+                <Label Foreground="white" x:Name="lblClock" Content="Clock:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" Width="133"/>
                 <TextBox x:Name="textBoxClock" HorizontalAlignment="Left" Height="23" Margin="148,41,0,0" VerticalAlignment="Top" Width="200"/>
                 <Button x:Name="btnSetClock" Content="Set" HorizontalAlignment="Left" Margin="353,41,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="btnSetClock_Click"/>
-                <Label x:Name="lblSetIncomingMessage" Content="Incoming Message:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top" Width="133"/>
+                <Label Foreground="white" x:Name="lblSetIncomingMessage" Content="Incoming Message:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top" Width="133"/>
                 <TextBox x:Name="textBoxIncomingMessage" HorizontalAlignment="Left" Height="23" Margin="148,72,0,0" VerticalAlignment="Top" Width="503"/>
                 <Button x:Name="btnSetIncomingMessage" Content="Set" HorizontalAlignment="Left" Margin="656,72,0,0" VerticalAlignment="Top" Width="30" Height="23" Click="btnSetIncomingMessage_Click"/>
-                <Label x:Name="lblSetOutgoingMessage" Content="Outgoing Message:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="133"/>
+                <Label Foreground="white" x:Name="lblSetOutgoingMessage" Content="Outgoing Message:" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Width="133"/>
                 <TextBox x:Name="textBoxOutgoingMessage" HorizontalAlignment="Left" Height="23" Margin="148,103,0,0" VerticalAlignment="Top" Width="503"/>
                 <Button x:Name="btnSetOutgoingMessage" Content="Set" HorizontalAlignment="Left" Margin="656,103,0,0" VerticalAlignment="Top" Width="30" Height="23" Click="btnSetOutgoingMessage_Click"/>
                 <Button x:Name="btnSetIncomingImage" Content="Img" HorizontalAlignment="Left" Margin="691,72,0,0" VerticalAlignment="Top" Width="30" Height="23" Click="btnSetIncomingImage_Click"/>
@@ -67,7 +70,7 @@
                 <Button x:Name="btnClearLastItem" Content="ClearLastItem" HorizontalAlignment="Left" Margin="324,140,0,0" VerticalAlignment="Top" Width="150" Height="23" Click="btnClearLastItem_Click"/>
             </Grid>
         </GroupBox>
-        <ListView x:Name="listViewImages" HorizontalAlignment="Left" Height="336" Margin="0,294,0,0" VerticalAlignment="Top" Width="751">
+        <ListView x:Name="listViewImages" HorizontalAlignment="Left" Height="336" Margin="10,226,0,0" VerticalAlignment="Top" Width="751">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Background="Transparent" Orientation="Horizontal" />
